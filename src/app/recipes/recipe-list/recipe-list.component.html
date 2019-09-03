@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">
+            New Recipe
+        </button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <app-recipe-item *ngFor= "let recipeElement of recipes" [recipe]="recipeElement"
+        (recipeSelected)="onRecipeSelected(recipeElement)" ></app-recipe-item>
+   <!-- se realiza property binding con el [recipe] pasandose el nuevo recipe
+    se realiza event binding con el recipeSelected ya que este sirve como para indicar
+    que cuando exista ese evento se ejecute el metodo al que esta siendo igualado, pero al metodo 
+    hay que indicarle cual es el recipe que recibe para que eventualmnete pueda ser mostrado-->
+    </div>
+</div>
